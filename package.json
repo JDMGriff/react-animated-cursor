@@ -29,7 +29,6 @@
     "demo:build": "parcel build ./docs/src/index.html --dist-dir ./docs/dist --public-url ./",
     "demo:deploy": "npm run demo:build && gh-pages -d ./docs/dist",
     "prepare": "npm run build",
-    "prepublish": "rm -rf ./dist && npm run build",
     "lint": "eslint \"lib/**/*.+(ts|tsx)\" --fix ",
     "format": "prettier --write  \"lib/**/*.+(ts|tsx)\""
   },
@@ -47,8 +46,8 @@
     "url": "https://github.com/stephenscaff/react-animated-cursor/issues"
   },
   "peerDependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^25.0.0",
