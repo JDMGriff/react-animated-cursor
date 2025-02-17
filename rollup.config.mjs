@@ -3,6 +3,7 @@ import external from 'rollup-plugin-peer-deps-external'
 import resolve from '@rollup/plugin-node-resolve'
 import typescript from '@rollup/plugin-typescript'
 import dts from 'rollup-plugin-dts'
+// eslint-disable-next-line prettier/prettier
 import pkg from './package.json' with { type: 'json' }
 
 const umdGlobals = {
