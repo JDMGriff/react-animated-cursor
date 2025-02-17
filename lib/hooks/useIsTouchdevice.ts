@@ -1,17 +1,16 @@
 import { useEffect, useState } from 'react'
 
 const useIsTouchdevice = (): boolean => {
-  const [isTouchdevice, setIsTouchdevice] = useState<boolean>()
-  const screenWidth = typeof window !== 'undefined' ? window.innerWidth : 0
+  const [isTouchdevice, setIsTouchdevice] = useState<boolean>(false)
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      setIsTouchdevice(window.matchMedia('(hover: none)').matches)
+      // Check if the device supports touch events or doesn't support hover
+      const isTouch =
+        'ontouchstart' in window || window.matchMedia('(hover: none)').matches
+      setIsTouchdevice(isTouch)
     }
-    if (screenWidth < 768) {
-      setIsTouchdevice(window.matchMedia('(hover: none)').matches)
-    }
-  }, [screenWidth])
+  }, [])
 
   return isTouchdevice
 }
